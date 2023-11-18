@@ -1,0 +1,87 @@
+
+.jumbotron {
+    margin-top: 20px;
+}
+
+
+.nama-kelompok {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-card {
+    margin: auto;
+    width: 89%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(255, 240, 221);
+}
+
+
+.card-footer {
+    margin-top: 20px; 
+    text-align: center;
+    /* position: fixed;
+    bottom: 0;
+    width: 89%; */
+}
+
+.card-img-top {
+    height:200px;
+    width: auto;
+}
+
+.tombol {
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.edit {
+    margin-top: 10px;
+}
+
+
+.container-slide {
+    margin-top: 20px;
+    margin: auto;
+    padding: 10px 100px;
+    width: 89%;
+    background-color: rgb(230, 230, 230);
+}
+
+.container-dua {
+    margin: auto;
+    padding: 20px 100px;
+    margin-top: 20px;
+    width: 89%;
+    background-color: rgb(254, 239, 255);
+}
+
+
+.logo-grup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 25%;
+    
+}
+
+.container-dua {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-box1 {
+    width: 570px;
+    
+
+}
+
+.text-box1 p{
+    text-align: justify;
+}

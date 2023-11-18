@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+
+    
+     <!-- awal navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <a class="navbar-brand" href="/">
+            <img src="static/img/1.png" alt="Foto Profil" class="rounded-circle" style="width: 40px; height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/edit">Edit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- akhir navbar -->
+
+    <!-- Pesan sukses menggunakan alert success -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-warning alert-dismissible fade show" role="alert" id="myAlert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Edit tulisan slide</label>
+          <input type="email" class="form-control" id="inputan" aria-describedby="emailHelp" placeholder="">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Edit deskripsi kelompok</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <form action="/ubah-nama/1" method="post">
+        <div class="form-group">
+          <label for="nama_baru1">Edit nama anggota 1</label>
+          <input type="text" class="form-control" id="nama_baru1" name="nama_baru1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <form action="/ubah-nama/2" method="post">
+        <div class="form-group">
+          <label for="nama_baru1">Edit nama anggota 2</label>
+          <input type="text" class="form-control" id="nama_baru1" name="nama_baru1" required>
+          <!-- <small class="text-danger">We'll never share your email with anyone else.</small> -->
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <form action="/ubah-nama/3" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Edit nama anggota 3</label>
+          <input type="text" class="form-control" id="nama_baru1" name="nama_baru1" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    
+    <div class="card-footer text-muted">
+        @Copyright by Kelompok 2
+    </div>
+
+    </div>  
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
