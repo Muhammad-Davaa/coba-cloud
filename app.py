@@ -1,23 +1,18 @@
 from flask import Flask, render_template, request, flash, url_for, redirect
-from mysql import connector
+
+import pypyodbc as odbc 
+import pandas as pd
+
+connection_string = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:kelompok2db.database.windows.net,1433;Database=kelompok2db;Uid=davaramadhana;Pwd=Davamama4;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+db = odbc.connect(connection_string)
 
 app = Flask(__name__)
 app.secret_key = 'frankmakanayam'  
 
-db = connector.connect (
-    host = 'localhost',
-    user = 'root',
-    passwd = '',
-    database = 'db_kelompok2'
-)
-
-if db.is_connected():
-    print("berhasil terhubung ke database")
-
 @app.route("/")
 def home():
     cursor = db.cursor()
-    query = "SELECT nama FROM tbl_anggota"
+    query = "SELECT nama FROM [dbo].[db_kelompok2]"
     cursor.execute(query)
     results = cursor.fetchall()  # Ambil semua baris hasil
     cursor.close()
@@ -42,7 +37,7 @@ def ubah_nama(id):
         nama_baru = request.form['nama_baru1']
         
         cursor = db.cursor()
-        query = "UPDATE tbl_anggota SET nama = %s WHERE no = %s"
+        query = "UPDATE [dbo].[db_kelompok2] SET nama = ? WHERE no = ?"
         cursor.execute(query, (nama_baru, id))
         db.commit()
         cursor.close()
