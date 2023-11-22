@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, flash, url_for, redirect
 
 import pypyodbc as odbc 
-import pandas as pd
-
 connection_string = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:kelompok2db.database.windows.net,1433;Database=kelompok2db;Uid=davaramadhana;Pwd=Davamama4;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 db = odbc.connect(connection_string)
 
